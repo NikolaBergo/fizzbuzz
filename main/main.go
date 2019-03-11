@@ -4,7 +4,7 @@ import (
     "fmt"
     "os"
 
-    "fizzbuzz"
+    "github.com/NikolaBergo/fizzbuzz"
 )
 
 
