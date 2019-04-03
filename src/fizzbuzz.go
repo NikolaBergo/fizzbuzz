@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io"
 )
+
 // FizzBuzz() reads int64 from reader. If this number is devided by 3 it writes "fizz" to writer,
 // if this number is devided by 5 it writes "buzz", if this number is devided both 3 and 5
 // it writes "fizzbuzz" to writer
@@ -21,8 +22,8 @@ func FizzBuzz(r io.Reader, w io.Writer) error {
 
 		// case when newline or extra space in data allow program continue on reading
 		for err != nil && err.Error() == moveOn {
-            _, err = fmt.Fscanf(r, "%d", &number)
-        }
+			_, err = fmt.Fscanf(r, "%d", &number)
+		}
 
 		// case when EOF reached or another error occured
 		if err != nil {
@@ -45,9 +46,9 @@ func FizzBuzz(r io.Reader, w io.Writer) error {
 }
 
 const (
-	minus = '-'
-	fizz  = "fizz"
-	buzz  = "buzz"
+	minus  = '-'
+	fizz   = "fizz"
+	buzz   = "buzz"
 	moveOn = "unexpected newline"
 )
 

@@ -5,7 +5,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/NikolaBergo/fizzbuzz"
+	"github.com/NikolaBergo/fizzbuzz/src"
 )
 
 // ExampleCorrectInput'demostrates the extra spaces and newlines tolerance of FizzBuzz()
