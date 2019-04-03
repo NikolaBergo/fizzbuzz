@@ -24,7 +24,7 @@ func main() {
 	var any byte
 	fmt.Scanf("%c", &any)
 
-	reader, _ = os.Open("inputdata")
+	reader, _  := os.Open("inputdata")
 	writer, _ := os.Create("outputdata")
 
 	err = fizzbuzz.FizzBuzz(reader, writer)
