@@ -35,6 +35,6 @@ func main() {
 		fmt.Print("Check out the results in output file!=)\n")
 	}
 
-	r.Close()
-	w.Close()
+	reader.Close()
+	writer.Close()
 }
