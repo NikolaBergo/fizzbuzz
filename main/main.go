@@ -1,30 +1,40 @@
 package main
 
 import (
-    "fmt"
-    "os"
+	"fmt"
+	"os"
 
-    "github.com/NikolaBergo/fizzbuzz/src"
+	"github.com/NikolaBergo/fizzbuzz/src"
 )
 
-
+// main represents common user interface
 func main() {
-    fmt.Printf("Welcome to fizzbuzz!\nPlease, write your data to 'inputdata' file and press ENTER\n")
 
-    var any byte
-    fmt.Scanf("%c", &any)
+	// creating input file in a current directory
+	r, err := os.Create("inputdata")
+	if err != nil {
+		fmt.Print("Enable to create input file\n")
+		return
+	}
+	r.Close()
 
-    r, _ := os.Open("inputdata")
-    w, _ := os.Create("outputdata")
+	fmt.Printf("Welcome to fizzbuzz!\nPlease, write your data to 'inputdata' file and press ENTER\n")
 
-    err := fizzbuzz.FizzBuzz(r, w)
+	// scanf is waiting for user to allow program to continue
+	var any byte
+	fmt.Scanf("%c", &any)
 
-    if err != nil {
-        fmt.Printf("Ooop-s, something went wrong, check your input, error: ")
-        fmt.Print(err)
-        fmt.Print("\n")
-    }
+	reader, _ = os.Open("inputdata")
+	writer, _ := os.Create("outputdata")
 
-    r.Close()
-    w.Close()
+	err = fizzbuzz.FizzBuzz(reader, writer)
+
+	if err != nil {
+		fmt.Printf("Ooop-s, something went wrong, check your input, error: %v \n ", err)
+	} else {
+		fmt.Print("Check out the results in output file!=)\n")
+	}
+
+	r.Close()
+	w.Close()
 }
